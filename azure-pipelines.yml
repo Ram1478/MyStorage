@@ -29,7 +29,7 @@ steps:
     serverUrl: 'ftp://ftp.dlptest.com/'
     username: 'dlpuser'
     password: 'rNrKYTX9g7z3RgJRmxWuGHbeu'
-    rootDirectory: '$(System.DefaultWorkingDirectory)'
+    rootDirectory: '$(Build.StagingDirectory)'
     filePatterns: '**'
     remoteDirectory: '/FTP'
     clean: false
