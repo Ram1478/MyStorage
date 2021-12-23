@@ -20,10 +20,10 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'ftp://test.rebex.net/'
-    username: 'demo'
-    password: 'password'
-    rootDirectory: '/pub'
+    serverUrl: 'ftp://ftp.dlptest.com/'
+    username: 'dlpuser'
+    password: 'rNrKYTX9g7z3RgJRmxWuGHbeu'
+    rootDirectory: '/FTP'
     filePatterns: '**'
     remoteDirectory: '/upload/$(Build.BuildId)/'
     clean: false
