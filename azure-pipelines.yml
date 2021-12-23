@@ -23,9 +23,9 @@ steps:
     serverUrl: 'ftp://ftp.dlptest.com/'
     username: 'dlpuser'
     password: 'rNrKYTX9g7z3RgJRmxWuGHbeu'
-    rootDirectory: '/FTP'
+    rootDirectory: '$(Build.SourcesDirectory)'
     filePatterns: '**'
-    remoteDirectory: '/upload/$(Build.BuildId)/'
+    remoteDirectory: '/FTP'
     clean: false
     cleanContents: false
     preservePaths: false
