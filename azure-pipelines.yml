@@ -21,27 +21,18 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $files=$(git diff HEAD HEAD~ --name-only);
-              $temp=$files-split ' '; 
-              $count=$temp.Length;
-              echo "Total changed $count files";
-              For ($i=0; $i -lt $temp.Length; $i++)
-              {
-                  $name=$temp[$i];
-                  echo "Modified File -  $name file";
-                  $filepath = ($name.Split('/'))[0..($name.Split('/').count-2)] -join '/';
-                  echo "File path - $filepath";          
-                  $destFile = Join-Path $(Build.ArtifactStagingDirectory) $name;
-                  $destinationpath = Split-Path $destFile ;
-                  echo "Destination path - $destinationpath";
-                  if (!(Test-Path -Path $destinationpath)) {
-                      New-Item $destinationpath -ItemType Directory
-                  }
-                  Copy-Item $name -Destination $destFile -Recurse -Force 
-           
-              }
-      
-              Get-ChildItem -Path $(Build.ArtifactStagingDirectory) -Recurse -Force
+      'get-childitem $(build.artifactStagingDirectory) -recurse | Foreach { 
+              $lastupdatetime=$_.LastWriteTime; 
+              $nowtime=get-date; 
+              if(($nowtime - $lastupdatetime).totalhours -le 24) { 
+                Write-Host $_.fullname 
+              } 
+              else{ 
+                remove-item $_.fullname -Recurse -Force 
+              } 
+            }'
+            failOnStderr: true
+            workingDirectory: '$(build.artifactStagingDirectory)'
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
