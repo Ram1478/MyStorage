@@ -22,8 +22,8 @@ steps:
           targetType: 'inline'
           script: |
             # Write your PowerShell commands here.
-            $url = "https://raw.githubusercontent.com/thomasmaurer/demo-cloudshell/master/helloworld.ps1"
-            $output = "C:\temp\helloworld.ps1"
+            $url = "https://raw.githubusercontent.com/thomasmaurer/demo-cloudshell/master/helloworld.ps1"\
+            $output = "C:\temp\helloworld.ps1"\
             Invoke-WebRequest -Uri $url -OutFile $output
 - script: |
     echo Add other tasks to build, test, and deploy your project.
