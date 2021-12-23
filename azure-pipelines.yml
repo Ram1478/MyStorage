@@ -17,10 +17,16 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: WindowsMachineFileCopy@2
+- task: FtpUpload@2
   inputs:
-    SourcePath: '$(Build.Repository.LocalPath)'
-    MachineNames: '192.168.242.1'
-    AdminUserName: 'Ram'
-    AdminPassword: 'Pass@123'
-    TargetPath: 'c:\temp'
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://test.rebex.net/'
+    username: 'demo'
+    password: 'password'
+    rootDirectory: '/pub'
+    filePatterns: '**'
+    remoteDirectory: '/upload/$(Build.BuildId)/'
+    clean: false
+    cleanContents: false
+    preservePaths: false
+    trustSSL: false
