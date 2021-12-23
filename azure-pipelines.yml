@@ -33,6 +33,7 @@ steps:
             }'
             failOnStderr: true
             workingDirectory: '$(build.artifactStagingDirectory)'
+    pwsh: true
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
