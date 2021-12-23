@@ -31,7 +31,6 @@ steps:
           remove-item $_.fullname -Recurse -Force 
         } 
       }'
-      failonstderr: true
       workingDirectory: '$(build.artifactStagingDirectory)'
 - task: FtpUpload@2
   inputs:
