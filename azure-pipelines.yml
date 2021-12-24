@@ -4,7 +4,9 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+      branches:
+        include:
+        - master
 
 pool:
   vmImage: ubuntu-latest
@@ -17,19 +19,38 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: ChangedFiles@1
+- task: PowerShell@2
   inputs:
-    variable: 'HasChanged'
-    isOutput: true
-    refBranch: 'master'
-    cwd: '$(System.DefaultWorkingDirectory)'
+    targetType: 'inline'
+    script: |
+      $files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
+                    $temp=$files-split ' '; 
+                    $count=$temp.Length;
+                    echo "Total changed $count files";
+                    For ($i=0; $i -lt $temp.Length; $i++)
+                    {
+                        $name=$temp[$i];
+                        echo "Modified File -  $name file";
+                        $filepath = ($name.Split('/'))[0..($name.Split('/').count-2)] -join '/';
+                        echo "File path - $filepath";          
+                        $destFile = Join-Path $(Build.ArtifactStagingDirectory) $name;
+                        $destinationpath = Split-Path $destFile ;
+                        echo "Destination path - $destinationpath";
+                        if (!(Test-Path -Path $destinationpath)) {
+                            New-Item $destinationpath -ItemType Directory
+                        }
+                        Copy-Item $name -Destination $destFile -Recurse -Force 
+                 
+                    }
+            
+                    Get-ChildItem -Path $(Build.ArtifactStagingDirectory) -Recurse -Force
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
     serverUrl: 'ftp://ftp.dlptest.com/'
     username: 'dlpuser'
     password: 'rNrKYTX9g7z3RgJRmxWuGHbeu'
-    rootDirectory: '$(System.DefaultWorkingDirectory)'
+    rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**'
     remoteDirectory: '/FTP'
     clean: false
