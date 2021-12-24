@@ -1,0 +1,42 @@
+[16-12-2021 11:57:12]  Extracting files from CAB.
+[16-12-2021 11:57:12]  Process started at 16-12-2021 11:57:12 by user tmpmgr.
+[16-12-2021 11:57:12]  Processing data definitions...
+[16-12-2021 11:57:12]  Processing BAQ definitions...
+[16-12-2021 11:57:17]  Query version detected as: 4.1.200.0
+[16-12-2021 11:57:17]  Importing query definitions...
+[16-12-2021 11:57:17]  'AE_JobStatusUpdate' query created by 'tmpmgr' user in '10' company
+[16-12-2021 11:57:19]  Query is importing with 'AE_JobStatusUpdate' id with 'tmpmgr' author into '10' company
+[16-12-2021 11:57:25]  Done!
+[16-12-2021 11:57:25]  Importing query diagram settings...
+[16-12-2021 11:57:28]  Done!
+[16-12-2021 11:57:28]  Importing BPM directives for the Updatable Query...
+[16-12-2021 11:57:28]  Version: 4.1.200.0
+[16-12-2021 11:57:28]  Import updatable query customization:
+[16-12-2021 11:57:28]  
+Ice._10/AE_JobStatusUpdate.FieldUpdate
+[16-12-2021 11:57:29]  
+Ice._10/AE_JobStatusUpdate.FieldValidate
+[16-12-2021 11:57:29]  
+Ice._10/AE_JobStatusUpdate.GetList
+[16-12-2021 11:57:30]  
+Ice._10/AE_JobStatusUpdate.GetNew
+[16-12-2021 11:57:31]  
+Ice._10/AE_JobStatusUpdate.RunCustomAction
+[16-12-2021 11:57:31]  
+Ice._10/AE_JobStatusUpdate.Update
+[16-12-2021 11:57:32]  Import finished.
+[16-12-2021 11:57:32]  Import was successful for 'AE_JobStatusUpdate'.
+[16-12-2021 11:57:32]  Finished importing BAQ definitions.
+[16-12-2021 11:57:32]  Processing Customization definitions...
+[16-12-2021 11:57:33]  Import was successful for 'Customization_e28c9625-9732-4901-a699-47a955e14126'.
+[16-12-2021 11:57:33]  Finished importing Customization definitions.
+[16-12-2021 11:57:33]  Processing Dashboard definitions...
+[16-12-2021 11:57:34]  Error in the application.
+[16-12-2021 11:57:36]  Import was successful for 'AE-JobStatusUpdate'.
+[16-12-2021 11:57:36]  Finished importing Dashboard definitions.
+[16-12-2021 11:57:36]  Processing Menu definitions...
+[16-12-2021 11:57:38]  Import was successful for 'JC'.
+[16-12-2021 11:57:38]  Finished importing Menu definitions.
+[16-12-2021 11:57:38]  Finished the import of data definitions.
+[16-12-2021 11:57:38]  Removing temporary files.
+[16-12-2021 11:57:38]  Build process completed.
