@@ -57,3 +57,12 @@ steps:
     cleanContents: false
     preservePaths: false
     trustSSL: false
+- task: SqlDacpacDeploymentOnMachineGroup@0
+  inputs:
+    TaskType: 'sqlQuery'
+    SqlFile: '**/*.sql'
+    ServerName: 'EPICORERP'
+    DatabaseName: 'Test'
+    AuthScheme: 'sqlServerAuthentication'
+    SqlUsername: 'sa'
+    SqlPassword: 'Epicor10'
