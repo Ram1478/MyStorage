@@ -51,7 +51,7 @@ steps:
     username: 'dlpuser'
     password: 'rNrKYTX9g7z3RgJRmxWuGHbeu'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
-    filePatterns: '**'
+    filePatterns: '**/*.cab'
     remoteDirectory: '/FTP'
     clean: false
     cleanContents: false
