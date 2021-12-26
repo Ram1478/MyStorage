@@ -47,9 +47,9 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'sftp://test.rebex.net'
-    username: 'demo'
-    password: 'password'
+    serverUrl: 'sftp://mft.ftpsllc.com'
+    username: 'STCHSFTP'
+    password: 'Epicor123'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**/*.cab'
     remoteDirectory: '/pub'
