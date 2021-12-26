@@ -49,7 +49,7 @@ steps:
     credentialsOption: 'inputs'
     serverUrl: 'sftp://mft.ftpsllc.com'
     username: 'STCHSFTP'
-    password: 'Epicor123'
+    password: 'gamInugasud9'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**/*.cab'
     remoteDirectory: '/pub'
