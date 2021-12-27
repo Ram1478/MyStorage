@@ -47,7 +47,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'rdkvaqjotbops.eastus.azurecontainer.io'
+    serverUrl: 'sftp://rdkvaqjotbops.eastus.azurecontainer.io'
     username: 'epicadmin'
     password: 'epicor11'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
