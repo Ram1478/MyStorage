@@ -47,12 +47,12 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'sftp://mft.ftpsllc.com'
-    username: 'STCHSFTP'
-    password: 'gamInugasud9'
+    serverUrl: 'rdkvaqjotbops.eastus.azurecontainer.io'
+    username: 'epicadmin'
+    password: 'epicor11'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**/*.cab'
-    remoteDirectory: '/pub'
+    remoteDirectory: '/upload'
     clean: false
     cleanContents: false
     preservePaths: false
