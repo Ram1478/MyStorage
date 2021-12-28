@@ -47,7 +47,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'sftp://20.121.229.236:22'
+    serverUrl: 'ftps://20.121.229.236:22'
     username: 'epicadmin'
     password: 'epicor11'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
@@ -56,4 +56,4 @@ steps:
     clean: false
     cleanContents: false
     preservePaths: false
-    trustSSL: false
+    trustSSL: true
