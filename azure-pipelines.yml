@@ -47,9 +47,9 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'sftp://rdkvaqjotbops.eastus.azurecontainer.io:22'
-    username: 'epicadmin'
-    password: 'epicor11'
+    serverUrl: 'sftp://test.rebex.net'
+    username: 'demo'
+    password: 'password'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**/*.cab'
     remoteDirectory: '/upload'
