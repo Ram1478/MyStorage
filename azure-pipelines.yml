@@ -47,12 +47,12 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'inputs'
-    serverUrl: 'sftp://test.rebex.net'
+    serverUrl: 'sftp://test.rebex.net:22'
     username: 'demo'
     password: 'password'
     rootDirectory: '$(Build.ArtifactStagingDirectory)'
     filePatterns: '**/*.cab'
-    remoteDirectory: '/upload'
+    remoteDirectory: '/pup'
     clean: false
     cleanContents: false
     preservePaths: false
